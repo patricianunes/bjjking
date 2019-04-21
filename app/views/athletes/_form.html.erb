@@ -1,0 +1,20 @@
+<%= form_for @athlete do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+
+  <%= f.label :photo %>
+  <%= f.url_field :photo %>
+
+  <%= f.label :weight %>
+  <%= f.text_field :weight %>
+
+  <%= f.label :birthday, "Date of birth" %>
+  <%= f.text_field :birthday, :placeholder => 'YYYY-MM-DD' %>
+
+  <%= f.label :team_id %>
+  <%= f.select :team_id, Team.pluck(:name, :id), :include_blank => true %>
+
+  <%= f.label :belt_id %>
+  <%= f.select :belt_id, Belt.pluck(:name, :id), :include_blank => true %>
+  <%= f.submit %>
+<% end %>

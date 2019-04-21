@@ -1,0 +1,23 @@
+<h1><%= @athlete.name %></h1>
+
+<%= image_tag @athlete.photo, :class => 'feature' %>
+
+<ul>
+  <li>Name: <%= @athlete.name %></li>
+  <% if @athlete.birthday.present? %>
+    <li>Date of Birth: <%= @athlete.birthday.strftime '%A, %B %e, %Y' %></li>
+  <% end %>
+  <li>Team: <%= @athlete.team_id %></li>
+  <li>Belt: <%= @athlete.belt_id%></li>
+</ul>
+
+
+  <% if @athlete.belt.present? %>
+    <li>Athlete: <%= link_to @athlete.belt.name, @athlete.belt %></li>
+  <% end %>
+
+
+<div class="controls">
+  <%= link_to 'Edit athlete', edit_athlete_path(@athlete.id) %>
+  <%= link_to 'Delete athlete', athlete_path(@athlete.id), :method => 'delete' %>
+</div>
