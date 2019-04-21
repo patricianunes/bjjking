@@ -11,12 +11,6 @@
   <li>Belt: <%= @athlete.belt_id%></li>
 </ul>
 
-
-  <% if @athlete.belt.present? %>
-    <li>Athlete: <%= link_to @athlete.belt.name, @athlete.belt %></li>
-  <% end %>
-
-
 <div class="controls">
   <%= link_to 'Edit athlete', edit_athlete_path(@athlete.id) %>
   <%= link_to 'Delete athlete', athlete_path(@athlete.id), :method => 'delete' %>
