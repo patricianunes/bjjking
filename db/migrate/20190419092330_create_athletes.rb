@@ -5,7 +5,7 @@ class CreateAthletes < ActiveRecord::Migration[5.2]
       t.text :photo
       t.float :weight
       t.date :birthday
-      t.integer :gym_id
+      t.integer :team_id
       t.integer :belt_id
 
       t.timestamps

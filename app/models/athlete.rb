@@ -7,7 +7,7 @@
 #  photo      :text
 #  weight     :float
 #  birthday   :date
-#  gym_id     :integer
+#  team_id    :integer
 #  belt_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

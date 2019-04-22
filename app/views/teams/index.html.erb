@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Teams</h1>
+
+<ul>
+<% @teams.each do |team| %>
+  <li>
+    <%= link_to(team) do %>
+      <h2><%= team.name %></h2>
+      <img src="<%= team.logo %>" width="50" height="50">
+    <% end %>
+  </li>
+<% end %>
+</ul>
