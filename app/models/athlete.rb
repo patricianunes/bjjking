@@ -14,6 +14,6 @@
 #
 
 class Athlete < ApplicationRecord
-  has_and_belongs_to_many :belts, :optional => true
-  has_and_belongs_to_many :teams, :optional => true
+  belongs_to :belt, :optional => true
+  belongs_to :team, :optional => true
 end

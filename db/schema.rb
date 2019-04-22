@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2019_04_19_124241) do
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "athlete_id"
   end
 
   create_table "teams", force: :cascade do |t|

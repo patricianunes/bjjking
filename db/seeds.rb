@@ -1,12 +1,12 @@
 Belt.destroy_all
-b1 = Belt.create :name => 'white'
-b2 = Belt.create :name => 'blue'
-b3 = Belt.create :name => 'purple'
-b4 = Belt.create :name => 'broun'
-b5 = Belt.create :name => 'black'
-b6 = Belt.create :name => 'red and black'
-b7 = Belt.create :name => 'red and white'
-b8 = Belt.create :name => 'red'
+b1 = Belt.create :name => 'White'
+b2 = Belt.create :name => 'Blue'
+b3 = Belt.create :name => 'Purple'
+b4 = Belt.create :name => 'Brown'
+b5 = Belt.create :name => 'Black'
+b6 = Belt.create :name => 'Red and black'
+b7 = Belt.create :name => 'Red and white'
+b8 = Belt.create :name => 'Red'
 
 Team.destroy_all
 t1 = Team.create :name => 'Gracie Barra', :logo => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Gb-company_offcial-logo.jpg/220px-Gb-company_offcial-logo.jpg', :address => '4/332 Oxford St, Bondi Junction NSW 2022'

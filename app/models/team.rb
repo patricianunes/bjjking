@@ -12,5 +12,5 @@
 #
 
 class Team < ApplicationRecord
-  has_and_belongs_to_many :athlete, :optional => true
+  has_many :athletes
 end

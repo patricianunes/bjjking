@@ -9,7 +9,7 @@
   <%= f.text_field :weight %>
 
   <%= f.label :birthday, "Date of birth" %>
-  <%= f.text_field :birthday, :placeholder => 'YYYY-MM-DD' %>
+  <%= f.date_field :birthday, :placeholder => 'YYYY-MM-DD' %>
 
   <%= f.label :team_id %>
   <%= f.select :team_id, Team.pluck(:name, :id), :include_blank => true %>
