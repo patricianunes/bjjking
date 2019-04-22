@@ -6,6 +6,8 @@ class AthletesController < ApplicationController
   end
 
   def show
+    videos = Yt::Collections::Videos.new
+    @videos = videos.where(q: "#{@athlete.name} BJJ", order: 'viewCount').take(3).map(&:id)
   end
 
   def edit
