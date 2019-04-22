@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Belts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @belts.each do |belt| %>
+      <tr>
+        <td><%= belt.name %></td>
+        <td><%= link_to 'Show', belt %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

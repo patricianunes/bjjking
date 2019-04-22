@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @belt.name %></h1>
+
+<% @athletes.each do |athlete| %>
+  <%= image_tag athlete.photo, :class => 'thumb' %>
+
+  <ul>
+    <li>Name: <%= link_to athlete.name, athlete_path(athlete.id) %></li>
+    <li>Weight: <%= athlete.weight %></li>
+    <% if athlete.birthday.present? %>
+      <li>Date of Birth: <%= athlete.birthday.strftime '%A, %B %e, %Y' %></li>
+    <% end %>
+
+    <% if athlete.team.present? %>
+      <li>Team: <%= athlete.team.name %></li>
+    <% end %>
+
+    <% if athlete.belt.present? %>
+      <li>Belt: <%= athlete.belt.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= link_to 'Back', belts_path %>
