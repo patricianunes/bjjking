@@ -6,7 +6,6 @@
 #  name       :text
 #  logo       :text
 #  address    :text
-#  athlete_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

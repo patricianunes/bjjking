@@ -6,7 +6,6 @@
 #  name       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  athlete_id :integer
 #
 
 class Belt < ApplicationRecord

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :belts
   root :to => 'home#index'
   resources :athletes
-
+  resources :belts
+  resources :teams
 end
