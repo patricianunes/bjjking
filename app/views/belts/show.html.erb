@@ -13,7 +13,7 @@
     <% end %>
 
     <% if athlete.team.present? %>
-      <li>Team: <%= athlete.team.name %></li>
+      <li>Team: <%= link_to athlete.team.name, team_path(:id => athlete.team.id) %></li>
     <% end %>
 
     <% if athlete.belt.present? %>

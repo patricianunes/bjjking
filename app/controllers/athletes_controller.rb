@@ -1,6 +1,6 @@
 class AthletesController < ApplicationController
   before_action :set_athlete, except: [:index, :new, :create]
-  
+
   def index
     @athletes = Athlete.all
   end

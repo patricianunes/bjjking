@@ -2,12 +2,16 @@
 
 <h1>Teams</h1>
 
+<div >
+  <%= link_to "New Team", new_team_path %>
+</div>
+
 <ul>
 <% @teams.each do |team| %>
   <li>
     <%= link_to(team) do %>
-      <h2><%= team.name %></h2>
       <img src="<%= team.logo %>" width="50" height="50">
+      <h2><%= team.name %></h2>
     <% end %>
   </li>
 <% end %>

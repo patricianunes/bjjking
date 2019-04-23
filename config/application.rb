@@ -31,3 +31,4 @@ module Bjjking
     config.generators.system_tests = nil
   end
 end
+  
