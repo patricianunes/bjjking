@@ -1,14 +1,14 @@
 <div>
-  <%= link_to "New athlete", new_athlete_path, :class => "list-group-item list-group-item-action m1 active mb-5" %>
+  <%= link_to "New athlete", new_athlete_path, :class => "text-center btn btn-secondary mb-5" %>
 </div>
 
 
   <% @athletes.each do |athlete| %>
 
-    <%= link_to athlete.name, athlete_path(athlete.id), :class => "list-group-item list-group-item-action"%>
+    <%= link_to athlete.name, athlete_path(athlete.id), :class => "text-center list-group-item list-group-item-action"%>
 
       <ul class="w-100 justify-content-between list-group-item m1 mb-3">
-        <li class='list-group-item'><%= image_tag athlete.photo, :class => 'thumb' %></li>
+        <li class='list-group-item'><%= image_tag athlete.photo, :class => 'thumb rounded mx-auto d-block' %></li>
         <li class='list-group-item'>Weight: <%= athlete.weight %></li>
         <% if athlete.birthday.present? %>
           <li class='list-group-item'>Date of Birth: <%= athlete.birthday.strftime '%A, %B %e, %Y' %></li>

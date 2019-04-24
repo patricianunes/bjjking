@@ -1,33 +1,38 @@
-<h1><%= @athlete.name %></h1>
+<div class='list-group'>
 
-<%= image_tag @athlete.photo, :class => 'feature' %>
+  <h1 class='text-center list-group-item'><%= @athlete.name %></h1>
 
-<ul>
-  <li>Name: <%= @athlete.name %></li>
-  <% if @athlete.birthday.present? %>
-    <li>Date of Birth: <%= @athlete.birthday.strftime '%A, %B %e, %Y' %></li>
+  <%= image_tag @athlete.photo, :class => 'list-group-item' %>
+
+  <ul class='list-group'>
+    <li class='list-group-item'>Name: <%= @athlete.name %></li>
+    <% if @athlete.birthday.present? %>
+      <li>Date of Birth: <%= @athlete.birthday.strftime '%A, %B %e, %Y' %></li>
+    <% end %>
+
+    <% if @athlete.team.present? %>
+    <li class='list-group-item'>Team: <%= link_to @athlete.team.name, team_path(:id => @athlete.team.id) %></li>
+    <% end %>
+
+    <% if @athlete.belt.present? %>
+    <li class='list-group-item mb-3'>Belt: <%= link_to @athlete.belt.name, belt_path(:id => @athlete.belt.id) %></li>
+    <% end %>
+
+  </ul>
+
+  <% if @current_user.present? && @current_user.admin? %>
+  <div class="controls">
+      <%= link_to 'Edit athlete', edit_athlete_path(@athlete.id), :class => "btn btn-secondary mb-5"%>
+    <%= link_to 'Delete athlete', athlete_path(@athlete.id), :class => "btn btn-danger mb-5", :method => 'delete' %>
+  </div>
   <% end %>
 
-  <% if @athlete.team.present? %>
-  <li>Team: <%= link_to @athlete.team.name, team_path(:id => @athlete.team.id) %></li>
-  <% end %>
-
-  <% if @athlete.belt.present? %>
-  <li>Belt: <%= link_to @athlete.belt.name, belt_path(:id => @athlete.belt.id) %></li>
-  <% end %>
-
-</ul>
-
-<% if @current_user.present? && @current_user.admin? %>
-<div class="controls">
-    <%= link_to 'Edit athlete', edit_athlete_path(@athlete.id) %>
-  <%= link_to 'Delete athlete', athlete_path(@athlete.id), :method => 'delete' %>
 </div>
-<% end %>
 
-<ul>
+
+<ul class='list-group'>
 <% @videos.each do |video| %>
-  <li>
+  <li class='list-group-item'>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </li>
 <% end %>
