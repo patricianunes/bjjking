@@ -2,7 +2,7 @@
 
 <div>
   <% if @current_user.present? && @current_user.admin? %>
-    <%= link_to "Edit Team", new_team_path %>
+    <%= link_to "Edit Team", edit_team_path(@team.id) %>
   <% end %>
   <h2><%= @team.name %></h2>
   <img src="<%= @team.logo %>">
