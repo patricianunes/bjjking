@@ -1,6 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:show, :edit, :update, :destroy]
-  before_action :check_for_login, :only => [:new, :create]
+  before_action :set_team, except: [ :index, :new, :create]
 
   def index
     @teams = Team.all
