@@ -21,3 +21,7 @@ a3 = Athlete.create :name => 'Guilherme Mendes', :photo => 'https://caryjiujitsu
 a4 = Athlete.create :name => 'Galvao Atos', :photo => 'http://jiu-jitsu.news/wp-content/uploads/2018/06/750f96b361.jpg', :weight => '90', :team => t4, :belt => b5
 a5 = Athlete.create :name => 'Romulo Barral', :photo => 'https://www.sherdog.com/image_crop/200/300/_images/fighter/20100108071500_rominho.JPG', :weight => '70', :belt => b5
 a6 = Athlete.create :name => 'Helio Gracie', :photo => 'https://www.bjjee.com/wp-content/uploads/2015/04/helio-grace-sobrejiu.jpg', :weight => '50', :belt => b8
+
+User.destroy_all
+u1 = User.create :email => 'user@ga.co', :password => 'password'
+u2 = User.create :email => 'user1@ga.co', :password => 'password', :admin => true

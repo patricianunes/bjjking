@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div>
-  <%= link_to "Edit Team", new_team_path %>
+  <% if @current_user.present? && @current_user.admin? %>
+    <%= link_to "Edit Team", new_team_path %>
+  <% end %>
   <h2><%= @team.name %></h2>
   <img src="<%= @team.logo %>">
   <p><%= @team.address %></p>
@@ -15,19 +17,20 @@
   <% @team.athletes.each do |athlete| %>
     <%= image_tag athlete.photo, :class => 'thumb' %>
 
-    <ul>
-      <li>Name: <%= link_to athlete.name, athlete_path(athlete.id) %></li>
-      <li>Weight: <%= athlete.weight %></li>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Name: <%= link_to athlete.name, athlete_path(athlete.id) %></li>
+      <li class="list-group-item">Weight: <%= athlete.weight %></li>
+
       <% if athlete.birthday.present? %>
-        <li>Date of Birth: <%= athlete.birthday.strftime '%A, %B %e, %Y' %></li>
+        <li class="list-group-item">Date of Birth: <%= athlete.birthday.strftime '%A, %B %e, %Y' %></li>
       <% end %>
 
       <% if athlete.team.present? %>
-        <li>Team: <%= athlete.team.name%></li>
+        <li class="list-group-item">Team: <%= athlete.team.name%></li>
       <% end %>
 
       <% if athlete.belt.present? %>
-        <li>Belt: <%= link_to athlete.belt.name, belt_path(:id => athlete.belt.id)%></li>
+        <li class="list-group-item">Belt: <%= link_to athlete.belt.name, belt_path(:id => athlete.belt.id)%></li>
       <% end %>
     </ul>
   <% end %>
