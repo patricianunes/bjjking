@@ -1,1 +1,10 @@
-<h1>Welcome to BJJKing</h1>
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to BJJKing</h1>
+  <p class="lead">This is an app for BJJ fanatics.</p>
+  <hr class="my-4">
+  <p>You can find everything you're looking for in the BJJ community here.</p>
+  <% unless @current_user %>
+    <a class="btn btn-primary btn-lg" href="<%= new_user_path %>" role="button">Create an account</a>
+    <a class="btn btn-light btn-lg" href="<%= login_path %>" role="button">Login</a>
+  <% end %>
+</div>
