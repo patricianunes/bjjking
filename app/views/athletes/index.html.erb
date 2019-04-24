@@ -1,11 +1,35 @@
 <div>
-  <%= link_to "New athlete", new_athlete_path %>
+  <%= link_to "New athlete", new_athlete_path, :class => "list-group-item list-group-item-action m1 active mb-5" %>
 </div>
 
-<% @athletes.each do |athlete| %>
-  <%= image_tag athlete.photo, :class => 'thumb' %>
 
+  <% @athletes.each do |athlete| %>
+
+    <%= link_to athlete.name, athlete_path(athlete.id), :class => "list-group-item list-group-item-action"%>
+
+      <ul class="w-100 justify-content-between list-group-item m1 mb-3">
+        <li class='list-group-item'><%= image_tag athlete.photo, :class => 'thumb' %></li>
+        <li class='list-group-item'>Weight: <%= athlete.weight %></li>
+        <% if athlete.birthday.present? %>
+          <li class='list-group-item'>Date of Birth: <%= athlete.birthday.strftime '%A, %B %e, %Y' %></li>
+        <% end %>
+
+        <% if athlete.team.present? %>
+          <li class='list-group-item'>Team: <%= link_to athlete.team.name, team_path(:id => athlete.team.id) %></li>
+        <% end %>
+
+        <% if athlete.belt.present? %>
+          <li class='list-group-item'>Belt: <%= link_to athlete.belt.name, belt_path(:id => athlete.belt.id) %></li>
+        <% end %>
+      </ul>
+
+  <% end %>
+
+
+<!--
+<% @athletes.each do |athlete| %>
   <ul>
+    <li><%= image_tag athlete.photo, :class => 'thumb' %></li>
     <li>Name: <%= link_to athlete.name, athlete_path(athlete.id) %></li>
     <li>Weight: <%= athlete.weight %></li>
     <% if athlete.birthday.present? %>
@@ -20,5 +44,34 @@
       <li>Belt: <%= link_to athlete.belt.name, belt_path(:id => athlete.belt.id) %></li>
     <% end %>
   </ul>
-
 <% end %>
+
+
+<div class="list-group">
+  <a href="" class="list-group-item list-group-item-action active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small>3 days ago</small>
+    </div>
+    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <small>Donec id elit non mi porta.</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <small class="text-muted">Donec id elit non mi porta.</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <small class="text-muted">Donec id elit non mi porta.</small>
+  </a>
+</div>
+
+-->
