@@ -1,5 +1,7 @@
 class AthletesController < ApplicationController
   before_action :set_athlete, except: [:index, :new, :create]
+  before_action :check_for_login, :only => [:new, :create]
+  before_action :check_for_admin, :only => [:edit]
 
   def index
     @athletes = Athlete.all
