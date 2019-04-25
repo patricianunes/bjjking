@@ -1,3 +1,24 @@
 // Place all the styles related to the Athletes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.athlete-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.athlete-photo {
+  width: 150px;
+  height: 100%;
+  margin: 0 !important;
+}
+
+.athlete-logo {
+  width: 50px;
+}
+
+.athlete-table {
+  td, th {
+    vertical-align: middle;
+  }
+}

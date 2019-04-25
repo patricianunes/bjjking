@@ -2,8 +2,44 @@
   <%= link_to "New athlete", new_athlete_path, :class => "text-center btn btn-secondary mb-5" %>
 </div>
 
+<table class="table table-hover athlete-table">
+  <thead class="thead-dark">
+    <tr>
+      <th colspan="2" scope="col">Athlete</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Team</th>
+      <th scope="col">Belt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @athletes.order(weight: :desc).each_with_index do |athlete, index| %>
+    <tr>
+      <td colspan="2">
+        <%= link_to athlete_path(athlete.id), :class => 'athlete-list-item' do%>
+          <%= image_tag athlete.photo, :class => 'athlete-photo thumb rounded mx-auto d-block' %>
+          <h2 class="ml-4"><%= athlete.name %></h2>
+        <% end %>
+      </td>
+      <td><%= athlete.weight %></td>
+      <td>
+      <% if athlete.team.present? %>
+        <%= link_to team_path(:id => athlete.team.id) do %>
+          <img class="athlete-logo" src="<%= athlete.team.logo %>">
+        <% end %>
+      <% end %>
+      </td>
+      <td>
+      <% if athlete.belt.present? %>
+        <%= link_to athlete.belt.name, belt_path(:id => athlete.belt.id) %>
+      <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-  <% @athletes.each do |athlete| %>
+  <!--
+    <% @athletes.each do |athlete| %>
 
     <%= link_to athlete.name, athlete_path(athlete.id), :class => "text-center list-group-item list-group-item-action"%>
 
@@ -26,7 +62,7 @@
   <% end %>
 
 
-<!--
+
 <% @athletes.each do |athlete| %>
   <ul>
     <li><%= image_tag athlete.photo, :class => 'thumb' %></li>
