@@ -31,6 +31,7 @@
 
 
 <ul class='list-group'>
+  <h1>The most viewed videos from YouTube</h1>
 <% @videos.each do |video| %>
   <li class='list-group-item'>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

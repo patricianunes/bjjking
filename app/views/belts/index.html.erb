@@ -2,19 +2,19 @@
 
 <h1>Belts</h1>
 
-<table>
-  <thead>
+<table class="table table-hover athlete-table">
+  <thead class="thead-dark">
     <tr>
-      <th>Name</th>
-      <th></th>
+      <th colspan="2" scope="col">Name</th>
+      <th scope="col"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @belts.each do |belt| %>
       <tr>
-        <td><%= belt.name %></td>
-        <td><%= link_to 'Show', belt %></td>
+        <td colspan="2"><%= belt.name %></td>
+        <td colspan="2"><%= link_to 'Show', belt %></td>
       </tr>
     <% end %>
   </tbody>
